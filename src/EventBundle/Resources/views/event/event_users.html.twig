@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="table-responsive table-responsive-data2">
+        <table class="table table-data2">
+            <thead>
+            <tr>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>telephone</th>
+                <th>disponibilite</th>
+                <th>status</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for d in users %}
+                <tr>
+                    <td>{{ d.nom }}</td>
+                    <td>{{ d.prenom }}</td>
+                    <td>{{ d.tel }}</td>
+                    <td>{{ d.dispoTime }}</td>
+                    <td>{{ d.statut }}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+
+

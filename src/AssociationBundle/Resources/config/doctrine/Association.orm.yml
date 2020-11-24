@@ -1,0 +1,28 @@
+AssociationBundle\Entity\Association:
+    type: entity
+    table: null
+    repositoryClass: AssociationBundle\Repository\AssociationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        raisonSociale:
+            type: string
+            length: '255'
+            column: Raison_sociale
+        address:
+            type: string
+            length: '255'
+            column: Address
+        telephone:
+            type: integer
+        domaine:
+            type: string
+            length: '255'
+        gouvernorat:
+            type: string
+            length: '25'
+    lifecycleCallbacks: {  }

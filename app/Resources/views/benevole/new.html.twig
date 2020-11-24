@@ -1,0 +1,80 @@
+{% extends "base1.html.twig" %}
+
+
+{% block body %}
+
+
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="content-inner-page">
+
+
+                    <div class="section__content section__content--p30">
+                        <div class="container">
+                            <div class="row">
+                                <div class="center-block">
+                                    <div class="card">
+
+                                        <div class="card-body">
+
+                                            <hr>
+                                            <div class="card-title">
+                                                <h4 class="text title-2">Pour faire votre Candidature, remplissez le formulaire ci-dessous et cliquez sur "Soumettre".</h4>
+                                            </div>
+                                            <hr>
+                                            <div class="col-md-8">
+
+                                                {{ form_start(form,{'attr': {'novalidate': 'novalidate'}}, {'method': 'post', 'action': path('benevole_new'), 'attr': {'class': 'benevole_new'}}) }}
+
+
+
+                                                <div class="form-group">
+                                                    {{  form_row(form.cin ,{'label' : 'Cin','type' : 'number','name': '_cin', 'attr': {'class': 'form-control','placeholder': 'Enter CIN','required': 'required','autocomplete':'cin'}}) }}
+
+                                                </div>
+                                                <div class="form-group">
+                                                    {{  form_row(form.address ,{'label' : 'Adress','type' : 'text','name': '_adress', 'attr': {'class': 'form-control','placeholder': 'Enter address','required': 'required','autocomplete':'address'}}) }}
+
+                                                </div>
+                                                <div class="form-group">
+                                                    {{  form_row(form.mail ,{'label' : 'mail','type' : 'text','name': '_mail', 'attr': {'class': 'form-control','placeholder': 'Enter mail','required': 'required','autocomplete':'mail'}}) }}
+
+                                                </div>
+                                                <div class="form-group">
+                                                    {{  form_row(form.telephone ,{'label' : 'telephone','type' : 'number','name': '_telephone', 'attr': {'class': 'form-control','placeholder': 'Enter telephone','required': 'required','autocomplete':'telephone'}}) }}
+
+                                                </div>
+
+                                                <div class="form-group">
+                                                    {{  form_row(form.niveau ,{'label' : 'niveau','type' : 'text','name': '_niveau', 'attr': {'class': 'form-control','placeholder': 'Enter niveau','required': 'required','autocomplete':'niveau'}}) }}
+
+                                                </div>
+                                                <div class="form-group">
+                                                    {{  form_row(form.gouvernorat ,{'label' : 'gouvernorat','type' : 'text','name': '_gouvernorat', 'attr': {'class': 'form-control','placeholder': 'Enter gouvernorat','required': 'required','autocomplete':'gouvernorat'}}) }}
+
+
+
+                                                </div>
+                                                <button  type="submit" value="Create" id="payment-button"  class="btn btn-lg btn-info btn-block">
+                                                    Soumettre
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                </button>
+                                                <ul>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        {{ form_end(form) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE CONTAINER-->
+    </div>
+
+    </div>
+{% endblock %}

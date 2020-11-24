@@ -1,0 +1,68 @@
+{% extends 'cool_admin.html.twig' %}
+{% block content %}
+<div class="page-content--bgf7">
+    <!-- BREADCRUMB-->
+    <section class="au-breadcrumb2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="au-breadcrumb-content">
+
+                        <form class="au-form-icon--sm" action="" method="post">
+                            <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
+                            <button class="au-btn--submit2" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END BREADCRUMB-->
+    <!-- WELCOME-->
+    <section class="welcome p-t-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-4">
+                        Ajoutez une offre
+                    </h3>
+                    <hr class="line-seprate">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END WELCOME-->
+    {% endblock %}
+{% block body %}
+    <script>
+        function myFunction() {
+            alert("Votre offre est validée !");
+        }
+    </script>
+    <br>  <h2>  </h2>
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(form.poste, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(form.site, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(form.adresse, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(form.categorie, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(form.description, {'attr':{'class':'form-control'}}) }}</div>
+
+                <button class="btn btn-primary solid blank" type="submit" onclick="myFunction()"> confirmer </button>
+                <br> <br>
+                <a href="{{ path('myoffre_index') }}"><button class="btn btn-primary solid blank" type="submit" > voir la liste des offres </button></a>
+
+            </div>
+        </div>
+
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

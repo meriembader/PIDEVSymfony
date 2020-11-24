@@ -1,0 +1,37 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+
+    {% trans_default_domain 'FOSUserBundle' %}
+
+
+    {{ form_start(form, {'method': 'post', 'action': path('new'), 'attr': {'class': 'fos_user_registration_register form-horizontal ' }}) }}
+
+
+    <div class="modal-header">
+        <h4 class="modal-title">Ajouter logement</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label>Address</label>
+            {{ form_widget(form.adress,{'attr':{'class':'form-control','placeholder':'Saisir votre address'}}) }}
+        </div>
+        <div class="form-group">
+            <label>email</label>
+            {{ form_widget(form.email,{'attr':{'class':'form-control','placeholder':"Saisir votre email"}}) }}
+        </div>
+
+        <div class="form-group">
+            <label>Telephone</label>
+            {{ form_widget(form.telephone,{'attr':{'class':'form-control','placeholder':"Saisir votre telephone"}}) }}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" value="ajouter" class="btn btn-block btn-primary btn-lg">Ajouter</button>
+    </div>
+
+
+    {{ form_end(form) }}
+
+
+{% endblock body %}

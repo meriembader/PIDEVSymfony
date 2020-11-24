@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Service Clientèle
+{% endblock%}
+
+{% block body %}
+    <div class="container">
+        <h3> Service Clientèle </h3> <br>
+        <h5>  demande d'emploi  </h5> <br>
+        <p>
+            Votre mission sera d’orienter nos clients et prospects et de leur apporter un conseil personnalisé. Ainsi vous développerez l’expérience client 2.0. <br>
+
+            Conseiller à distance, oui, mais surtout contact privilégié de nos clients ! <br>
+
+            Nos clients compteront sur vous pour les orienter, les conseiller sur tous les sujets de la banque au quotidien <br>
+            et réaliser leurs opérations bancaires en ligne. <br> <br>
+
+            <b>Les missions c’est important, l’équipe et l’environnement de travail aussi ! </b> <br>
+        </p>
+        <br> <br>
+        <div>
+            <a href="{{ path('proj_pdf2') }}" class="btn btn-outline-success"><span class="glyphicon glyphicon-cloud-download"></span>Télécharger le PDF</a>
+        </div>
+        <br>
+        <br>
+        <a class="btn btn-success" href="{{ path('mydemande_new') }}"> Faites votre demande </a>
+    </div>
+    <br>
+    <br>
+{% endblock%}

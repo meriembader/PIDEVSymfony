@@ -1,0 +1,28 @@
+BenevoleBundle\Entity\Benevole:
+    type: entity
+    table: null
+    repositoryClass: BenevoleBundle\Repository\BenevoleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cin:
+            type: integer
+        address:
+            type: string
+            length: '255'
+        mail:
+            type: string
+            length: '255'
+        telephone:
+            type: integer
+        niveau:
+            type: string
+            length: '255'
+        gouvernorat:
+            type: string
+            length: '255'
+    lifecycleCallbacks: {  }

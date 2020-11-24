@@ -1,0 +1,24 @@
+myformation_index:
+  path:     /
+  defaults: { _controller: "ProjetProjBundle:MyFormation:index" }
+  methods:  GET
+
+myformation_show:
+  path:     /{id}/show
+  defaults: { _controller: "ProjetProjBundle:MyFormation:show" }
+  methods:  GET
+
+myformation_new:
+  path:     /new
+  defaults: { _controller: "ProjetProjBundle:MyFormation:new" }
+  methods:  [GET, POST]
+
+myformation_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "ProjetProjBundle:MyFormation:edit" }
+  methods:  [GET, POST]
+
+myformation_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "ProjetProjBundle:MyFormation:delete" }
+  methods:  DELETE

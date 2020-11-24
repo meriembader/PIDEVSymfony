@@ -1,0 +1,44 @@
+AppBundle\Entity\MyOffre:
+    type: entity
+    table: my_offre
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        poste:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        site:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        adresse:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        categorie:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        description:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,21 @@
+AppBundle\Entity\DonArgent:
+    type: entity
+    table: don_argent
+    id:
+        idDon:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            id: true
+            column: id_don
+            generator:
+                strategy: IDENTITY
+    fields:
+        somme:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    lifecycleCallbacks: {  }

@@ -1,0 +1,29 @@
+api_homepage:
+    path:     /
+    defaults: { _controller: ApiBundle:Default:index }
+
+list_donprodapi:
+    path:     /don/all
+    defaults: { _controller: ApiBundle:Api:listDonArgentApi }
+
+add_donproapi:
+    path: /don/add
+    defaults: {_controller: ApiBundle:Api:addDonA}
+
+add_donargapi:
+    path: /don/addDA
+    defaults: {_controller:ApiBundle:Api:addDonArgent}
+
+remove_donargapi:
+    path: /don/delete/{idDon}
+    defaults: {_controller:ApiBundle:Api:deleteDonArgent}
+
+add_donapi:
+    path:    /don/addapi
+    defaults: {_controller:ApiBundle:Api:addDon}
+add_donapiA:
+    path:    /don/addar
+    defaults: {_controller:ApiBundle:Api:addDonArgentApi}
+points:
+    path:    /don/points
+    defaults: {_controller:ApiBundle:Api:points}

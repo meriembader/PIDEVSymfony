@@ -1,0 +1,42 @@
+esprit_api_homepage:
+    path:     /
+    defaults: { _controller: EspritApiBundle:Default:index }
+
+all:
+    path:  /tasks/all
+    defaults: { _controller: EspritApiBundle:Default:all }
+
+all1:
+    path:  /tasks/all1
+    defaults: { _controller: EspritApiBundle:Default:all1 }
+
+
+
+create_task:
+    path:  /tasks/new
+    defaults: { _controller: EspritApiBundle:Default:new }
+
+
+all_benevole:
+    path:  /tasks/allBenevole
+    defaults: { _controller: EspritApiBundle:Default:allBenevole }
+
+create_Benevole:
+    path:  /tasks/newBenevole
+    defaults: { _controller: EspritApiBundle:Default:newBenevole }
+
+all_User:
+    path:  /tasks/allUser
+    defaults: { _controller: EspritApiBundle:Default:AllUser }
+
+create_User:
+    path:  /tasks/newUser
+    defaults: { _controller: EspritApiBundle:Default:newUser }
+
+
+
+login_User:
+    path:  /tasks/login
+    defaults: { _controller: EspritApiBundle:Default:login }
+
+

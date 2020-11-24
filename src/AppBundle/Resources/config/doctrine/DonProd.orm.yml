@@ -1,0 +1,51 @@
+AppBundle\Entity\DonProd:
+    type: entity
+    table: don_prod
+    indexes:
+        id_prod:
+            columns:
+                - id_prod
+        f1:
+            columns:
+                - id_prod
+    id:
+        idDon:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+            id: true
+            column: id_don
+            generator:
+                strategy: IDENTITY
+    fields:
+        qt:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        date:
+            type: date
+            nullable: false
+        heure:
+            type: time
+            nullable: false
+        lieu:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+    manyToOne:
+        idProd:
+            targetEntity: Produit
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                id_prod:
+                    referencedColumnName: id_prod
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

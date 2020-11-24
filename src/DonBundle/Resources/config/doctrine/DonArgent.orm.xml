@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="DonBundle\Entity\DonArgent" table="don_argent">
+    <id name="idDon" type="integer" column="id_don">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="somme" type="integer" column="somme" nullable="true">
+      <options>
+        <option name="unsigned"/>
+        <option name="default">NULL</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,49 @@
+AppBundle\Entity\Comment:
+    type: entity
+    table: comment
+    indexes:
+        IDX_9474526C71F7E88B:
+            columns:
+                - event_id
+        IDX_9474526CA76ED395:
+            columns:
+                - user_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        contenue:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+    manyToOne:
+        event:
+            targetEntity: Event
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                event_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

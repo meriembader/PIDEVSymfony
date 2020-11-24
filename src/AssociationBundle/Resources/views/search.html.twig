@@ -1,0 +1,32 @@
+<form class="example-wrapper" role="search" method="post" action="{{ path('association_search') }}">
+    <div>
+        <input type="text" class="form-control" name="search" value="{{ val }}">
+        <button type="submit" class="btn btn-success" name="sub">search</button>
+    </div>
+</form>
+
+<div class="example-wrapper">
+    {% for result in res %}
+        <p style="display:inline-block;width:200px;">{{ result.raisonSociale }}</p>
+
+    {% endfor %}
+</div>
+
+<script>
+
+    $.ajax({
+        type: "GET",
+        url: "{{ path('association_search') }}",
+        dataType: "json",
+        data: {search: input},
+        cache: false,
+        success: function (response) {
+            $('.example-wrapper').replaceWith(response);
+            //$('.example-wrapper').load("{{ path('association_search') }}?search="+ $search.val());
+            console.log(response);
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });
+</script>

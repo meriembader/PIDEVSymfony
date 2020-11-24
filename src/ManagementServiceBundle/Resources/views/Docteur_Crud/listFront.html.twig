@@ -1,0 +1,48 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- DATA TABLE -->
+            <h3 class="title-5 m-b-35">Doctor table</h3>
+            <div class="table-responsive table-responsive-data2">
+                <table class="table table-data2">
+                    <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>telephone</th>
+                        <th>disponibilite</th>
+                        <th>status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for d in doctors %}
+                        <tr>
+                            <td>{{ d.nom }}</td>
+                            <td>{{ d.prenom }}</td>
+                            <td>{{ d.tel }}</td>
+                            <td>{{ d.dispoTime }}</td>
+                            <td>{{ d.statut }}</td>
+                            <td>
+                                <div class="table-data-feature">
+                                    <a href="{{ path('edit_doctor',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="edit">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    <a href="{{ path('delete_doctor',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- END DATA TABLE -->
+        </div>
+    </div>
+
+{% endblock %}

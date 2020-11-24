@@ -1,0 +1,126 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <div class=" container">
+        <div class="row">
+            <div class="col-md-12">
+               <br>
+                <h4>Gestion des benevoles</h4>
+                <div class="table-data__tool">
+                    <div class="table-data__tool-left">
+
+
+
+                    </div>
+                    <div class="table-data__tool-right">
+
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" >
+
+                            <a href="{{ path('benevole_pdf') }}"> <i class="zmdi zmdi-plus"></i>PDF</a>
+                        </button>
+                        <button class="au-btn au-btn-icon au-btn--green au-btn--small" >
+
+                            <a href="{{ path('benevole_excel') }}"> <i class="zmdi zmdi-plus"></i>Excel</a>
+                        </button>
+                    </div>
+                </div>
+                </div>
+            <br>  <input id="myInput" type="text" name="rechercher" placeholder="rechercher ..."> <br>
+                <div class="table-responsive table-responsive-data2">
+                    <table class="table table-data2">
+                        <thead>
+                        <tr>
+                            <th>
+                                <label class="au-checkbox">
+                                    <input type="checkbox">
+                                    <span class="au-checkmark"></span>
+                                </label>
+                            </th>
+                            <th>Id</th>
+                            <th>Cin</th>
+                            <th>Address</th>
+                            <th>Mail</th>
+                            <th>Telephone</th>
+                            <th>Niveau</th>
+                            <th>Gouvernorat</th>
+                            <th>Actions</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="myTable">
+                        {% for benevole in benevoles %}
+                            <tr class="tr-shadow">
+                                <td>
+                                    <label class="au-checkbox">
+                                        <input type="checkbox">
+                                        <span class="au-checkmark"></span>
+                                    </label>
+                                </td>
+                                <td><a href="{{ path('benevole_show', { 'id': benevole.id }) }}">{{ benevole.id }}</a></td>
+                                <td>{{ benevole.cin }}</td>
+                                <td>{{ benevole.address }}</td>
+                                <td>{{ benevole.mail }}</td>
+                                <td>{{ benevole.telephone }}</td>
+                                <td>{{ benevole.niveau }}</td>
+                                <td>{{ benevole.gouvernorat }}</td>
+
+                                <td>
+                                    <div class="table-data-feature">
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                        <button >
+
+                                            <a href="{{ path('benevole_edit', { 'id': benevole.id }) }}" class="item" data-toggle="modal" data-target="#myModal"data-placement="top" title="Edit" > <i class="zmdi zmdi-edit"></i></a>
+
+                                        </button>
+                                        <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                            <i class="zmdi zmdi-delete"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <!-- END DATA TABLE -->
+            </div>
+    </div>
+
+    <br>
+
+    {# display navigation #}
+    <div class="navigation text-center">
+        <h3>  <b>  {{ knp_pagination_render(benevoles) }} </b> </h3>
+        <style>
+
+            .text-center {
+                text-align: center!important;
+
+                margin-left: 530px;
+            }
+
+        </style>
+    </div>
+
+
+    <br> <br>
+    </div>
+
+{% endblock %}

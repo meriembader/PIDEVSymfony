@@ -1,0 +1,37 @@
+benevole_index:
+    path:     /
+    defaults: { _controller: "BenevoleBundle:Benevole:index" }
+    methods:  GET
+
+benevole_show:
+    path:     /{id}/show
+    defaults: { _controller: "BenevoleBundle:Benevole:show" }
+    methods:  GET
+
+benevole_new:
+    path:     /new
+    defaults: { _controller: "BenevoleBundle:Benevole:new" }
+    methods:  [GET, POST]
+
+benevole_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BenevoleBundle:Benevole:edit" }
+    methods:  [GET, POST]
+
+benevole_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BenevoleBundle:Benevole:delete" }
+    methods:  DELETE
+
+benevole_pdf:
+    path:     /pdf
+    defaults: { _controller: "BenevoleBundle:Benevole:pdf" }
+    methods:  GET
+
+benevole_excel:
+    path:     /excel
+    defaults: { _controller: "BenevoleBundle:Benevole:excel" }
+    methods:  GET
+benevole_chart:
+    path:     /chart
+    defaults: {_controller: "BenevoleBundle:Benevole:chart"}

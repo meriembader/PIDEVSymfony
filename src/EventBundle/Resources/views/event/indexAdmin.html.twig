@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- DATA TABLE -->
+            <h3 class="title-5 m-b-35">data table</h3>
+            <div class="table-data__tool-right">
+                <a href="{{ path('event_new') }}" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <i class="zmdi zmdi-plus"></i>Ajouter Event</a>
+            </div>
+
+            <a href="{{ path('commentsPdf') }}" class="au-btn-filter"title="pdf">
+                <i class="zmdi zmdi-collection-pdf"> pdf </i>
+            </a>
+        </div>
+        <div class="table-responsive table-responsive-data2">
+            <table class="table table-data2">
+                <thead>
+                <tr>
+                    <th>title</th>
+                    <th>start date</th>
+                    <th>end data</th>
+                    <th>nb Place</th>
+                    <th>state</th>
+                    <th>location</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for d in events %}
+                    <tr>
+                        <td>{{ d.title }}</td>
+                        <td>{{ d.startDate | date("j. F Y", "Europe/Paris") }}</td>
+                        <td>{{ d.endDate | date("j. F Y", "Europe/Paris") }}</td>
+                        <td>{{ d.nbPlace }}</td>
+                        <td>{{ d.state }}</td>
+                        <td>{{ d.location }}</td>
+                        <td>
+                            <div class="table-data-feature">
+                                <a href="{{ path('event_edit',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </a>
+                                <a href="{{ path('event_delete',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </a>
+                                <a href="{{ path('get_EventParticipent',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="participants">
+                                    <i class="zmdi zmdi-accounts-alt"></i>
+                                </a>
+
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+    </div>
+
+{% endblock %}
+

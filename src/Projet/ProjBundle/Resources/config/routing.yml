@@ -1,0 +1,83 @@
+proj_demande:
+    resource: "@ProjetProjBundle/Resources/config/routing/mydemande.yml"
+    prefix:   /mydemande
+
+proj_offre:
+    resource: "@ProjetProjBundle/Resources/config/routing/myoffre.yml"
+    prefix:   /myoffre
+
+proj_formation:
+    resource: "@ProjetProjBundle/Resources/config/routing/myformation.yml"
+    prefix:   /myformation
+
+proj_contact:
+    resource: "@ProjetProjBundle/Resources/config/routing/contactmail.yml"
+    prefix:   /contactmail
+
+projet_proj_homepage:
+    path:     /
+    defaults: { _controller: ProjetProjBundle:Default:index }
+
+proj_for:
+    path:     /formation_mail
+    defaults: { _controller: ProjetProjBundle:Default:contact}
+proj_dem:
+    path:     /admin
+    defaults: { _controller: ProjetProjBundle:Default:demandeadmin}
+
+proj_contactformation:
+    path:     /contactform
+    defaults: { _controller: ProjetProjBundle:Default:formationcontact}
+
+proj_offa:
+    path:     /offreA
+    defaults: { _controller: ProjetProjBundle:Default:aoffre}
+proj_offb:
+    path:     /offreB
+    defaults: { _controller: ProjetProjBundle:Default:boffre}
+
+proj_pdf1:
+      path:     /pdf1
+      defaults: { _controller: ProjetProjBundle:Default:pdf1}
+proj_pdf2:
+      path:     /pdf2
+      defaults: { _controller: ProjetProjBundle:Default:pdf2}
+
+proj_offpg:
+    path:     /offres
+    defaults: { _controller: ProjetProjBundle:Default:offre}
+proj_recherchefor:
+    path:     /recherche
+    defaults: { _controller: ProjetProjBundle:MyFormation:recherche}
+proj_rechercheoff:
+    path:     /rechercheoff
+    defaults: { _controller: ProjetProjBundle:MyOffre:recherche}
+proj_formpage:
+    path:     /lesformation
+    defaults: { _controller: ProjetProjBundle:Default:formationpage}
+proj_homeAdmin:
+    path:     /homeAdmin
+    defaults: { _controller: ProjetProjBundle:Security:redirect}
+proj_homeUser:
+    path:     /add
+    defaults: { _controller: ProjetProjBundle:Security:add}
+all:
+    path:     /mydemande/all
+    defaults: { _controller: ProjetProjBundle:Mobile:all}
+alloff:
+    path:     /offre/all
+    defaults: { _controller: ProjetProjBundle:Mobile:all2}
+findD:
+    path:     /findD
+    defaults: { _controller: ProjetProjBundle:Mobile:findD}
+insign:
+    path:     /insign/{username}/{password}
+    defaults: { _controller: ProjetProjBundle:Mobile:insign}
+
+deleteop:
+    path:     /dem/delete/{id}
+    defaults: { _controller: ProjetProjBundle:Mobile:deletedem}
+
+newD:
+    path:     /newD
+    defaults: { _controller: ProjetProjBundle:Mobile:newD}

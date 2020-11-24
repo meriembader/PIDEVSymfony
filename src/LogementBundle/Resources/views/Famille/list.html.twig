@@ -1,0 +1,20 @@
+{% extends '::baseFront.html.twig' %}
+
+{% block body %}
+    {% for l in logements %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('front/images/logement.png') }}" class="card-img-top image-front-school" alt="logement">
+            <div class="card-body">
+                <div class="card-text">
+                    <p>Adresse : {{ l.adress }}<p/>
+                    <p>Email : {{ l.email }}<p/>
+                    <p>telephone : {{ l.telephone }}<p/>
+
+                </div>
+                <a href="{{ path('send_email',{id : l.id}) }}" class="btn btn-primary">send Mail</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

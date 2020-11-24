@@ -1,0 +1,10 @@
+{% extends 'baseFront.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_widget(form.qt) }}
+    {{ form_widget(form.date) }}
+    {{ form_widget(form.heure) }}
+    {{ form_widget(form.lieu) }}
+    <button type="submit">Valider</button>
+    {{ form_end(form) }}
+{% endblock %}

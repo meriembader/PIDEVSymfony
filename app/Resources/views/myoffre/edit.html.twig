@@ -1,0 +1,67 @@
+{% extends 'cool_admin.html.twig' %}
+{% block content %}
+<div class="page-content--bgf7">
+    <!-- BREADCRUMB-->
+    <section class="au-breadcrumb2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="au-breadcrumb-content">
+
+                        <form class="au-form-icon--sm" action="" method="post">
+                            <input class="au-input--w300 au-input--style2" type="text" placeholder="Search for datas &amp; reports...">
+                            <button class="au-btn--submit2" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <!-- END BREADCRUMB-->
+    <!-- WELCOME-->
+    <section class="welcome p-t-10">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="title-4">
+                        Modifiez votre offre
+                    </h3>
+                    <hr class="line-seprate">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END WELCOME-->
+    {% endblock %}
+{% block body %}
+    <br>   <h3>modifiez votre Offre </h3>
+    <div class="container">
+        {{ form_start(edit_form) }}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(edit_form.poste, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(edit_form.site, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(edit_form.adresse, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(edit_form.categorie, {'attr':{'class':'form-control'}}) }}</div>
+                <div class="form-group">{{ form_row(edit_form.description, {'attr':{'class':'form-control'}}) }}</div>
+
+                <button class="btn btn-primary solid blank" type="submit" > modifier </button>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
+
+        <br>
+        <a class="btn btn-primary" href="{{ path('myoffre_index') }}">voir a liste </a>
+        <br> <br>
+        {{ form_start(delete_form) }}
+        <button class="btn btn-danger" type="submit" > Delete </button>
+        {{ form_end(delete_form) }}
+
+    </div>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

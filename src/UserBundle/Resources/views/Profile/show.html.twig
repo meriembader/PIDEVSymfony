@@ -1,0 +1,88 @@
+{% extends('@User/layout.html.twig') %}
+
+{% block title %}
+    Profile
+{% endblock %}
+{% block chemin %}
+{% endblock %}
+{% block pageName %}
+{% endblock %}
+{% block body %}
+    <div class="main-content">
+        <div class="user-profile">
+            <div class="user-display">
+                <br>
+                <div class="bottom">
+                    <div class="user-avatar">
+                        <span class="status"></span>
+                        <a onclick="profileImage();" href="#" class="profile-pic">
+                            <div class="profile-pic" style="background-image: url('{{ asset('profileImg/'~app.user.pathImage) }}')">
+
+                                <span class="glyphicon glyphicon-camera"></span>
+                                <span>Change Image</span>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="user-info">
+                        <h4> {% if user is defined %}{{ user.prenom | upper }} {{ user.nom | upper }} {% endif %}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+
+                    <div class="info-block panel panel-default">
+                        <div class="panel-heading">
+                            <h4>About me</h4>
+                        </div>
+                        <div class="panel-body">
+                            <table class="no-border no-strip skills">
+                                <tbody class="no-border-x no-border-y">
+                                <tr>
+                                    <td class="item">classe:<span class="icon s7-portfolio"></span></td>
+                                    <td>{{ user.classe | upper }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Date de naissance:<span class="icon s7-gift"></span></td>
+                                    <td>{{ user.dateNaissance | date }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Telephone:<span class="icon s7-phone"></span></td>
+                                    <td>{{ user.telephone | upper }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Adresse:<span class="icon s7-map-marker"></span></td>
+                                    <td>{{ user.adresse | upper }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="item">Sexe:<span class="icon s7-global"></span></td>
+                                    <td>{{ user.sexe | upper }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div id="myModal100" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="out4();" class="close">&times;</span>
+            <h3 id="title">Modifier La photo de profile</h3>
+            <div class="wrap">
+                <div class="element">
+                    <form id="myform" method="post" action="{{ path('upload_photo') }}" enctype="multipart/form-data" novalidate> <input id="upload" name="upload" type="file"onchange="formSubmit();" data-parsley-id="100" />
+                        <a class="btn btn-default" style="padding:20px;" href="#" id="upload_link">Upload your photo</a>
+                    </form>​</div>
+                <div class="elements"><a class="btn btn-default" style="padding:20px;" href="{{ path('remove_photo') }}"><span></span> mettre la photo par default</a></div>
+            </div>
+        </div>
+
+    </div>
+{% endblock body %}

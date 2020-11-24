@@ -1,0 +1,7 @@
+association_association:
+    resource: "@AssociationBundle/Resources/config/routing/association.yml"
+    prefix:   /association
+
+association_homepage:
+    path:     /
+    defaults: { _controller: AssociationBundle:Default:index }

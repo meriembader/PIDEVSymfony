@@ -1,0 +1,45 @@
+AppBundle\Entity\Association:
+    type: entity
+    table: association
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        raisonSociale:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: Raison_sociale
+        address:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: Address
+        telephone:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        domaine:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        gouvernorat:
+            type: string
+            nullable: false
+            length: 25
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

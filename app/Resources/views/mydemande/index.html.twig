@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>Les Demandes d'emplois disponibles  </h3>
+    <div class ="container">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Adresse mail</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for myDemande in myDemandes %}
+                <tr>
+                    <td><a href="{{ path('mydemande_show', { 'id': myDemande.id }) }}">{{ myDemande.id }}</a></td>
+                    <td>{{ myDemande.date }}</td>
+                    <td>{{ myDemande.libelle }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                <a class ="btn btn-btn btn-info" href="{{ path('mydemande_show', { 'id': myDemande.id }) }}">show</a>
+                            </li>
+                            <li>
+                                <a class ="btn btn-warning" href="{{ path('mydemande_edit', { 'id': myDemande.id }) }}">edit</a>
+                            </li>
+
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a class="btn btn-success" href="{{ path('mydemande_new') }}">faire une autre demande</a>
+    </div>
+{% endblock %}

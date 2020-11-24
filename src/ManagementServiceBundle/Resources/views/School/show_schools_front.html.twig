@@ -1,0 +1,22 @@
+{% extends '::baseFront.html.twig' %}
+
+{% block body %}
+    {% for s in schools %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('front/images/school.jpg') }}" class="card-img-top image-front-school" alt="school">
+            <div class="card-body">
+                <h5 class="card-title">{{ s.fullName }}</h5>
+                <div class="card-text">
+                    <p>Adresse : {{ s.address }}<p/>
+                    <p>Email : {{ s.email }}<p/>
+                    <p>Specialite : {{ s.speciality }}<p/>
+                    <p>telephone : {{ s.tel }}<p/>
+
+                </div>
+                <a href="{{ path('affect_user_to_school',{id : s.id}) }}" class="btn btn-primary">s'affecter</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

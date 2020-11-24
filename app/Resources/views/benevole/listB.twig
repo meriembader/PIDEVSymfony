@@ -1,0 +1,51 @@
+{% block body %}
+    <div class=" container">
+        <h5 Align="centre">Listes des Benevoles</h5>
+        <div class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" id="search" class="form-control" placeholder="Suche...">
+            </div>
+            <!-- /input-group -->
+        </div>
+
+
+        <!-- jQuery is necessary -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+        <table class="table table-data2">
+            <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Cin</th>
+                <th>Address</th>
+                <th>Mail</th>
+                <th>Telephone</th>
+                <th>Niveau</th>
+                <th>Gouvernorat</th>
+
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for benevole in benevoles %}
+                <tr class="tr-shadow">
+
+                    <td><a href="{{ path('benevole_show', { 'id': benevole.id }) }}">{{ benevole.id }}</a></td>
+                    <td>{{ benevole.cin }}</td>
+                    <td>{{ benevole.address }}</td>
+                    <td>{{ benevole.mail }}</td>
+                    <td>{{ benevole.telephone }}</td>
+                    <td>{{ benevole.niveau }}</td>
+                    <td>{{ benevole.gouvernorat }}</td>
+
+                </tr>
+
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

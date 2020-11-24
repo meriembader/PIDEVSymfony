@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Mail</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ mail.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ mail.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ mail.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ mail.telephone }}</td>
+            </tr>
+            <tr>
+                <th>De</th>
+                <td>{{ mail.de }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ mail.text }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('mail_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('mail_edit', { 'id': mail.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

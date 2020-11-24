@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div class="row">
+
+<div class="col-md-6">
+    <br>
+    <h4 class="text-center">Association</h4>
+    <br>
+    {{ mukadi_chart(chart) }}
+
+</div>
+
+    <div class="col-md-6">
+        <br>
+        <h4 class="text-center">Benevole</h4>
+        <br>
+        {{ mukadi_chart(chart_two) }}
+    </div>
+    </div>
+
+
+    <script src="{{ asset('/chart')}}/jquery.js"></script>
+<script src="{{ asset('/chart')}}/Chart.bundle.min.js"></script>
+<script src="{{ asset('/chart')}}/mukadi.chart.min.js"></script>
+</div>
+
+{% endblock %}
+
+
+

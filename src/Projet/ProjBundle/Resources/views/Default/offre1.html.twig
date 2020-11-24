@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    offres d'emplois
+{% endblock%}
+
+{% block body %}
+
+    <br>
+    <h3> Accédez aux offres disponibles !</h3>
+    <br>
+
+    <div id="isotope" class="isotope">
+        <div class="col-md-4 col-sm-6 col-xs-12 commercial isotope-item">
+            <div class="isotope-img-container">
+                <a href="{{ asset('offreA.html.twig') }}">
+                    <img class="img-responsive" src="{{ asset('images/projects/project1.jpg') }}" alt="">
+                    <span class="gallery-icon"><i class="fa fa-gplus"></i></span>
+                </a>
+
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href="{{ path('proj_offa') }}">Teltway Building</a>
+                        </h3>
+                        <p class="project-cat">Commercial </p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Isotope item 1 end -->
+
+        <div class="col-md-4 col-sm-6 col-xs-12 healthcare isotope-item">
+            <div class="isotope-img-container">
+                <a href="{{ asset('offreB.html.twig') }}">
+                    <img class="img-responsive" src="{{ asset('images/projects/project2.jpg') }}" alt="">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                </a>
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href="{{ path('proj_offb')}}">Service Clientèle</a>
+                        </h3>
+                        <p class="project-cat">société</p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Isotope item 2 end -->
+
+        <div class="col-md-4 col-sm-6 col-xs-12 government isotope-item">
+
+            <!-- <div class="isotope-img-container">
+                <a href="#">
+                    <img class="img-responsive" src="images/projects/project3.jpg" alt="">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                </a>
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href="#">TNT East Facility</a>
+                        </h3>
+                        <p class="project-cat">Government</p>
+                    </div>
+                </div>
+            </div>
+        </div> --> <!-- Isotope item 3 end -->
+        </div>
+    </div>
+{% endblock %}
+

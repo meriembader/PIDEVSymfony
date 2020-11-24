@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ "libelle" }}
+    <p></p>
+        {{ form_widget(form.libelleProd) }}
+    <p></p>
+    {{ "Categorie" }}
+    <p></p>
+        {{ form_widget(form.categorie) }}
+    <p></p>
+        <button type="submit">Valider</button>
+    {{ form_end(form) }}
+{% endblock %}

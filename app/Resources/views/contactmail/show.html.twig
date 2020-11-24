@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contactmail</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ contactmail.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ contactmail.name }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ contactmail.email }}</td>
+            </tr>
+            <tr>
+                <th>Subject</th>
+                <td>{{ contactmail.subject }}</td>
+            </tr>
+            <tr>
+                <th>Message</th>
+                <td>{{ contactmail.message }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contactmail_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('contactmail_edit', { 'id': contactmail.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

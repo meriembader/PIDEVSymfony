@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set flashbag_notices = app.session.flashbag.get('notice')  %}
+    {% if flashbag_notices is not empty %}
+        <ul>
+            {% for notice in flashbag_notices %}
+                <li> {{ notice }} </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <h1 class="column-title">Formation: envoyer votre message </h1>
+
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(form.name, {'attr':{'class':'form-control form-control-name'}}) }}</div>
+
+                <div class="form-group">{{ form_row(form.email, {'attr':{'class':'form-control form-control-email'}}) }}</div>
+
+                <div class="form-group">{{ form_row(form.subject, {'attr':{'class':'form-control form-control-subject'}}) }}</div>
+
+                <div class="form-group">{{ form_row(form.message, {'attr':{'class':'form-control form-control-message'}}) }}</div>
+
+                <div class="text-right"><br>
+                    <button class="btn btn-primary solid blank" type="submit">Send Message</button>
+                </div>
+
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

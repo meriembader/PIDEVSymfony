@@ -1,0 +1,16 @@
+ public function newAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $Schools = new School();
+        $Schools->setRaisonSociale($request->get('raisonSociale'));
+        $Schools->setAddress($request->get('address'));
+        $Schools->setTelephone($request->get('telephone'));
+        $Schools->setDomaine($request->get('domaine'));
+        $Schools->setGouvernorat($request->get('gouvernorat'));
+        $em -> persist($Schools);
+        $em->flush();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $formatted = $serializer->normalize($Schools);
+        return new JsonResponse($formatted);
+    }
