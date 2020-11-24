@@ -1,0 +1,62 @@
+{% extends 'baseFront.html.twig' %}
+{% block banner %}
+    <h1 class="banner-title">Faire un don</h1>
+    <ol class="breadcrumb">
+    </ol>
+{% endblock %}
+{% block add %}
+    {% endblock %}
+    {%  block body %}
+    <link rel="stylesheet" href={{asset('vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css')}}>
+     {% for prod in i %}
+        {% for prods in s %}
+
+            <tr>
+                <td>{{ "Niveau:" }}</td>
+                {% if (prod+prods)>1000 %}
+                    <td>{{ "Super Donnateur" }}</td>
+                {% else %}
+                    <td>{{ "Donnateur" }}</td>
+                {% endif %}
+                <p></p>
+                <td>{{ "Points totals:" }}</td>
+                <td>{{ prod + prods}}</td>
+                <p></p>
+                <td>{{ "Total d'argent donné:" }}</td>
+                <td>{{ prods }}</td>
+                <td>{{ "DT" }}</td>
+                <p></p>
+                <td>{{ "Total de produits donnés:" }}</td>
+                <td>{{ prod }}</td>
+    </tr>
+{% endfor %}
+            {% endfor %}
+<p></p>
+        <a href="{{ path('don_addDonP') }}"><button class="btn btn-primary" type="submit"> <i class="zmdi zmdi-plus" ></i>Faire un don de produits</button></a>
+        <a href="{{ path('don_addDonA') }}"><button class="btn btn-primary" type="submit"> <i class="zmdi zmdi-plus" ></i>Faire un don d'Argent</button></a>
+        <p></p>
+        <a href="{{ path('don_listDonProdsf') }}"><button class="btn btn-dark" type="submit"> <i class="zmdi zmdi-plus" ></i>Historique des dons de produits</button></a>
+        <a href="{{ path('don_listDonArgentf') }}"><button class="btn btn-dark" type="submit"> <i class="zmdi zmdi-plus" ></i>Historique des dons d'Argent</button></a>
+
+        <script src={{asset('vendors/jquery/dist/jquery.min.js')}}></script>
+    <script src={{asset('vendors/popper.js/dist/umd/popper.min.js')}}></script>
+    <script src={{asset('vendors/bootstrap/dist/js/bootstrap.min.js')}}></script>
+    <script src={{asset('assets/js/main.js')}}></script>
+
+
+    <script src={{asset('vendors/datatables.net/js/jquery.dataTables.min.js')}}></script>
+    <script src={{asset('vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js')}}></script>
+    <script src={{asset('vendors/datatables.net-buttons/js/dataTables.buttons.min.js')}}></script>
+    <script src={{asset('vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js')}}></script>
+    <script src={{asset('vendors/jszip/dist/jszip.min.js')}}></script>
+    <script src={{asset('vendors/pdfmake/build/pdfmake.min.js')}}></script>
+    <script src={{asset('vendors/pdfmake/build/vfs_fonts.js')}}></script>
+    <script src={{asset('vendors/datatables.net-buttons/js/buttons.html5.min.js')}}></script>
+    <script src={{asset('vendors/datatables.net-buttons/js/buttons.print.min.js')}}></script>
+    <script src={{asset('vendors/datatables.net-buttons/js/buttons.colVis.min.js')}}></script>
+    <script src={{asset('assets/js/init-scripts/data-table/datatables-init.js')}}></script>
+
+{% endblock %}
+
+
+

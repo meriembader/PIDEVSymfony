@@ -1,0 +1,31 @@
+{% extends 'baseFront.html.twig' %}
+{% block banner %}
+    <h1 class="banner-title">Faire un don de produits</h1>
+    <ol class="breadcrumb">
+    </ol>
+{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ "quantité" }}
+    <p></p>
+    {{ form_widget(form.qt) }}
+    <p></p>
+    {{ "Produit" }}
+    <p></p>
+    {{ form_widget(form.idProd) }}
+    <p></p>
+    {{ "date du rdv" }}
+    <p></p>
+    {{ form_widget(form.date) }}
+    <p></p>
+    {{ "heure du rdv" }}
+    <p></p>
+    {{ form_widget(form.heure) }}
+    <p></p>
+    {{ "lieu du rdv" }}
+    <p></p>
+    {{ form_widget(form.lieu) }}
+    <p></p>
+    <button type="submit">Valider</button>
+    {{ form_end(form) }}
+{% endblock %}

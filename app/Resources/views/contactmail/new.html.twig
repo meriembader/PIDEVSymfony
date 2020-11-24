@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="col-md-12">
+        <h1 class="column-title">Formation: envoyer votre message </h1>
+
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">
+
+                <div class="form-group">{{ form_row(form.subject, {'attr':{'class':'form-control form-control-subject'}}) }}</div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(form.name, {'attr':{'class':'"form-control form-control-name"'}}) }}</div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(form.email, {'attr':{'class':'form-control form-control-email'}}) }}</div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">{{ form_row(form.message, {'attr':{'class':'form-control form-control-message'}}) }}</div>
+            </div>
+            <div class="text-right"><br>
+                <button class="btn btn-primary solid blank" type="submit">Send Message</button>
+            </div>
+
+        </div>
+    </div>
+    {{ form_end(form) }}
+
+
+{% endblock %}

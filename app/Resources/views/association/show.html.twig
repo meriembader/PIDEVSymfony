@@ -1,0 +1,48 @@
+
+
+    {% block body %}
+        <h1>Association</h1>
+
+        <table>
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ association.id }}</td>
+            </tr>
+            <tr>
+                <th>Raisonsociale</th>
+                <td>{{ association.raisonSociale }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ association.address }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ association.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Domaine</th>
+                <td>{{ association.domaine }}</td>
+            </tr>
+            <tr>
+                <th>Gouvernorat</th>
+                <td>{{ association.gouvernorat }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <ul>
+            <li>
+                <a href="{{ path('association_new') }}">Retour</a>
+            </li>
+            <li>
+                <a href="{{ path('association_edit', { 'id': association.id }) }}">Modifier</a>
+            </li>
+            <li>
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+                {{ form_end(delete_form) }}
+            </li>
+        </ul>
+    {% endblock %}

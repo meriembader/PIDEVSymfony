@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- DATA TABLE -->
+            <h3 class="title-5 m-b-35">data table</h3>
+            <div class="table-data__tool-right">
+                <a href="{{ path('new_logement') }}" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <i class="zmdi zmdi-plus"></i>Ajouter Logement</a>
+            </div>
+            <a href="{{ path('pdf') }}" class="au-btn-filter"title="pdf">
+                <i class="zmdi zmdi-collection-pdf"> pdf </i>
+            </a>
+            <a href="{{ path('chart_logement') }}" class="au-btn-filter"title="pdf">
+                <i class="zmdi zmdi-chart">charts</i>
+            </a>
+        </div>
+        <div class="table-responsive table-responsive-data2">
+            <table class="table table-data2">
+                <thead>
+                <tr>
+                    <th>address</th>
+                    <th>type</th>
+                    <th>description</th>
+                    <th>capacite</th>
+                    <th>resident</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for d in logements %}
+                    <tr>
+                        <td>{{ d.adress }}</td>
+                        <td>{{ d.type }}</td>
+                        <td>{{ d.description }}</td>
+                        <td>{{ d.capacite }}</td>
+                        <td>{{ d.resident }}</td>
+                        <td>
+                            <div class="table-data-feature">
+                                <a href="{{ path('edit_logement',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </a>
+                                <a href="{{ path('delete_logement',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </a>
+
+                            </div>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+    </div>
+    </div>
+
+{% endblock %}

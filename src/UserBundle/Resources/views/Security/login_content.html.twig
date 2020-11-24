@@ -1,0 +1,25 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<form action="{{ path("fos_user_security_check") }}" method="post">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
+
+    <label for="username">{{ 'security.login.username'|trans }}</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+
+    <label for="password">{{ 'security.login.password'|trans }}</label>
+    <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+
+    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+    <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+    {%  if is_granted ('ROLE_ADMIN')  %}
+        <button class="btn btn-theme btn-block" id="_submit" name="_submit" type="submit"><a href="{{path('don_list_don_argb')}}"></a><i class="fa fa-lock"></i> Se connecter</button>
+    {% else%}
+        <button class="btn btn-theme btn-block" id="_submit" name="_submit" type="submit"><a href="{{path('don_addDonProd')}}"></a><i class="fa fa-lock"></i> Se connecter</button>
+    {% endif %}</form>

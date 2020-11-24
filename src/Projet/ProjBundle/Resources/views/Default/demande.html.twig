@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+
+    <div>
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('proj_dem') }}">Home<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('myoffre_new') }}">Offres</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('myformation_new') }}">Formations</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('mydemande_index') }}">Demandes</a>
+            </li>
+
+        </ul>
+
+    </div>
+{% endblock %}
+{% block body%}
+    <br> <br>
+    <h2> BIENVENUE CHER RECRUTEUR </h2> <br>
+    <div class="container">
+
+
+        <div class="row text-center">
+            <a href="#"> <h3 class="section-title"> faire un don maintenant </h3> </a>
+
+        </div>
+        <!--/ Title row end -->
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="ts-service-box">
+                    <div class="ts-service-box-img pull-left">
+                        <img src="{{ asset('images/don.jpeg') }}" alt="" />
+                    </div>
+
+                </div><!-- Service 1 end -->
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

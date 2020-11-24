@@ -1,0 +1,28 @@
+myoffre_index:
+  path:     /
+  defaults: { _controller: "ProjetProjBundle:MyOffre:index" }
+  methods:  GET
+
+myoffre_show:
+  path:     /{id}/show
+  defaults: { _controller: "ProjetProjBundle:MyOffre:show" }
+  methods:  GET
+
+myoffre_new:
+  path:     /new
+  defaults: { _controller: "ProjetProjBundle:MyOffre:new" }
+  methods:  [GET, POST]
+
+myoffre_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "ProjetProjBundle:MyOffre:edit" }
+  methods:  [GET, POST]
+
+myoffre_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "ProjetProjBundle:MyOffre:delete" }
+  methods:  DELETE
+myoffre_rech:
+  path:     /rech
+  defaults: { _controller: "ProjetProjBundle:MyOffre:recherche" }
+  methods:  Get

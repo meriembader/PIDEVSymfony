@@ -1,0 +1,25 @@
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>logement address</th>
+        <th>logement type</th>
+        <th>logement description</th>
+        <th>logement capacite</th>
+        <th>logement residents</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for l in logement %}
+        <tr>
+            <td>{{ l.adress }}</td>
+            <td>{{ l.type }}</td>
+            <td>{{ l.description }}</td>
+            <td>{{ l.capacite  }}</td>
+            <td>{{ l.resident }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

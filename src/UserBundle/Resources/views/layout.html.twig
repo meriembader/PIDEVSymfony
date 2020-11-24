@@ -1,0 +1,87 @@
+{% extends 'baseFront.html.twig' %}
+{% block banner %}
+    <h1 class="banner-title">Authentification</h1>
+    <ol class="breadcrumb">
+    </ol>
+{% endblock %}
+  {% block body %}
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <meta charset="UTF-8" />
+      </head>
+      <body>
+      <div>
+          <form action="{{ path("fos_user_security_check") }}" method="post" class="form-login" >
+              <h2 class="form-login-heading">S'authentifier</h2>
+              {% if csrf_token %}
+                  <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+              {% endif %}
+
+              <div class="login-wrap">
+                  <input type="text" id="username" name="_username" required="required" autocomplete="username" class="form-control" placeholder="Nom utilisateur " >
+                  <br>
+                  <input type="password" id="password" name="_password" required="required" autocomplete="current-password" class="form-control" placeholder="Mot de passe">
+                  <center><label class="checkbox" >
+                          <input type="checkbox" value="remember-me"  value="on" id="remember_me" name="_remember_me">Se souvenir </label>
+                      <a data-toggle="modal" href="{{ path('fos_user_resetting_request') }}"> Mot de  passe oublié?</a>
+                  </center>
+                  {%  if is_granted ('ROLE_ADMIN')  %}
+                      <button class="btn btn-theme btn-block" id="_submit" name="_submit" type="submit"><a href="{{path('don_list_don_argb')}}"></a><i class="fa fa-lock"></i> Se connecter</button>
+                  {% else%}
+                      <button class="btn btn-theme btn-block" id="_submit" name="_submit" type="submit"><a href="{{path('don_add_don')}}"></a><i class="fa fa-lock"></i> Se connecter</button>
+                  {% endif %}
+                  <hr>
+
+                  <div class="registration">
+                      Vous n'avez pas encore de compte?<br/>
+                      <a class="" href="{{ path('fos_user_registration_register') }}">
+                          Créer un compte
+                      </a>
+                  </div>
+              </div>
+              <!-- Modal -->
+              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                  <div class="modal-dialog" role="dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title">Mot de passe Oublié ?</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>Entrez votre adresse e-mail ci-dessous pour réinitialiser votre mot de passe.</p>
+                              <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+                          </div>
+                          <div class="modal-footer">
+                              <button data-dismiss="modal" class="btn btn-default" type="button">Annuler</button>
+                              <button class="btn btn-theme" type="button">Valider</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- modal -->
+
+              <!-- Modal -->
+              <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModale" class="modal fade">
+                  <div class="modal-dialog" role="dialog">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              <h4 class="modal-title">Erreur ?</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>Entrez votre nom d'utilisateur ou mot de passe correct.</p>
+
+                          </div>
+                          <div class="modal-footer">
+                              <button data-dismiss="modal" class="btn btn-default" type="button">Ok</button>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- modal -->
+          </form>
+      </body>
+      </html>
+  {% endblock body %}

@@ -1,0 +1,25 @@
+{% extends '::baseFront.html.twig' %}
+
+{% block body %}
+    <form method="post" action="{{ path('search_Logement') }}">
+        <input type="text" name="location" placeholder="location " />
+        <input type="submit" value="chercher">
+    </form>
+    {% for l in logements %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('front/images/logement.png') }}" class="card-img-top image-front-school" alt="logement">
+            <div class="card-body">
+                <h5 class="card-title">{{ l.type }}</h5>
+                <div class="card-text">
+                    <p>Adresse : {{ l.adress }}<p/>
+                    <p>capacite : {{ l.capacite }}<p/>
+                    <p>resident : {{ l.resident }}<p/>
+
+                </div>
+                <a href="{{ path('join_logement',{id : l.id}) }}" class="btn btn-primary">join Logement</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

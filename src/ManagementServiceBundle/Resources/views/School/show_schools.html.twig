@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <!-- DATA TABLE -->
+            <h3 class="title-5 m-b-35">data table</h3>
+            <div class="table-data__tool-right">
+                <a href="{{ path('add_school') }}" class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <i class="zmdi zmdi-plus"></i>AjouterSchool</a>
+            </div>
+            </div>
+            <div class="table-responsive table-responsive-data2">
+                <table class="table table-data2">
+                    <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>address</th>
+                        <th>telephone</th>
+                        <th>email</th>
+                        <th>specialite</th>
+                        <th>nombre Place</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for d in schools %}
+                        <tr>
+                            <td>{{ d.fullName }}</td>
+                            <td>{{ d.address }}</td>
+                            <td>{{ d.tel }}</td>
+                            <td>{{ d.email }}</td>
+                            <td>{{ d.speciality }}</td>
+                            <td>{{ d.nbPlace }}</td>
+                            <td>
+                                <div class="table-data-feature">
+                                    <a href="{{ path('edit_school',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="edit">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </a>
+                                    <a href="{{ path('delete_school',{'id': d.id}) }}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </a>
+
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <!-- END DATA TABLE -->
+        </div>
+    </div>
+
+{% endblock %}

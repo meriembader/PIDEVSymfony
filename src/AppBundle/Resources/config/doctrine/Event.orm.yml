@@ -1,0 +1,86 @@
+AppBundle\Entity\Event:
+    type: entity
+    table: event
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+        startdate:
+            type: date
+            nullable: true
+            options:
+                default: 'NULL'
+            column: startDate
+        enddate:
+            type: date
+            nullable: true
+            options:
+                default: 'NULL'
+            column: endDate
+        nbplace:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                default: 'NULL'
+            column: nbPlace
+        description:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+                default: 'NULL'
+        state:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+        location:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+        picture:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+    manyToMany:
+        user:
+            targetEntity: FosUser
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: idEvenement
+            joinTable:
+                name: participant
+                joinColumns:
+                    -
+                        name: id_evenement
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: user_id
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }

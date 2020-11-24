@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+
+
+{% block body %}
+    {{ form_start(form, {'method': 'post', 'action': path('edit_logement',{'id':logement.id}), 'attr': {'class': 'form-horizontal' }}) }}
+    <div class="modal-header">
+        <h4 class="modal-title">modifier Logement</h4>
+    </div>
+    <div class="form-group">
+        <label>address</label>
+        {{ form_widget(form.adress,{'attr':{'class':'form-control','placeholder':'Saisir  address','value' : logement.adress}}) }}
+    </div>
+    <div class="form-group">
+        <label>type</label>
+        {{ form_widget(form.type) }}
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        {{ form_widget(form.description,{'attr':{'class':'form-control','placeholder':'Saisir  description','value' : logement.description}}) }}
+    </div>
+    <div class="form-group">
+        <label>capacite</label>
+        {{ form_widget(form.capacite,{'attr':{'class':'form-control','placeholder':'Saisir  capacite','value' : logement.capacite}}) }}
+    </div>
+    <div class="form-group">
+        <label>Nombre de resident</label>
+        {{ form_widget(form.resident,{'attr':{'class':'form-control','placeholder':'Saisir  nombre de resident','value' : logement.resident}}) }}
+    </div>
+    <div class="modal-footer">
+        <button type="submit" value="submit" class="btn btn-block btn-primary btn-lg">Edit</button>
+    </div>
+
+
+    {{ form_end(form) }}
+{% endblock %}

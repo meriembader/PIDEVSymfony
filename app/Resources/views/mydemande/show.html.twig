@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h3>votre demande </h3>
+    <div class="container">
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <th scope="col">Id</th>
+                <td>{{ myDemande.id }}</td>
+            </tr>
+            <tr>
+                <th scope="col"> Adresse mail</th>
+                <td>{{ myDemande.date }}</td>
+            </tr>
+            <tr>
+                <th scope="col"> téléphone</th>
+                <td>{{ myDemande.libelle }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <a class ="btn btn-info" href="{{ path('mydemande_edit', { 'id': myDemande.id }) }}"> modifier</a>
+        {{ form_start(delete_form) }}
+        <button class="btn btn-danger" type="submit" > Delete </button>
+        {{ form_end(delete_form) }}
+        <br>
+        <a class="btn btn-primary" href="{{ path('mydemande_index') }}">voir la liste </a> <br>
+
+    </div>
+    <br>
+{% endblock %}

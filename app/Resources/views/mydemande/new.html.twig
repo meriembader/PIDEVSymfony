@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <script>
+        function myFunction() {
+            alert("Votre demande a été faite !");
+        }
+    </script>
+    <h2> Faites votre demande ! </h2>
+    <div class="container">
+
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    {{ form_label(form.date, 'Adresse mail') }}
+                    {{ form_widget(form.date, {'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.date) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.libelle, 'Téléphone') }}
+                    {{ form_widget(form.libelle, {'attr':{'class':'form-control'}}) }}
+                    {{ form_errors(form.libelle) }}
+                </div>
+                <button class="btn btn-primary solid blank" type="submit" onclick="myFunction()" > confirmer </button>
+                <br> <br>
+                <a class ="btn btn-primary" href="{{ path('mydemande_index') }}">
+                    Consulter les demandes
+                </a>
+            </div>
+
+        </div>
+        {{ form_end(form) }}
+
+
+    </div>
+    <br>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Formations
+{% endblock%}
+
+{% block body %}
+    <script>
+        function myFunction() {
+            alert("Votre demande d'accés à cette formation est enregistée! Consultez votre email");
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <h3> Accédez aux formations disponibles !</h3>
+    <br>
+    <br>
+    <div id="isotope" class="isotope">
+        <div class="col-md-4 col-sm-6 col-xs-12 commercial isotope-item">
+            <div class="isotope-img-container">
+                <a href=" {{ path('proj_contactformation') }}">
+                    <img class="img-responsive" src="{{ asset('images/forma1.jpg') }}" alt="">
+                    <span class="gallery-icon"><i class="fa fa-gplus"></i></span>
+                </a>
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href=" {{ path('proj_contactformation') }}">formation linguistique </a>
+                        </h3>
+                        <p class="project-cat"> 3 mois </p>
+                        <input type="button" class="project-cat" value="se former" />
+                    </div>
+                </div>
+            </div>
+        </div><!-- Isotope item 1 end -->
+
+        <div class="col-md-4 col-sm-6 col-xs-12 healthcare isotope-item">
+            <div class="isotope-img-container">
+                <a href=" {{path('proj_contactformation') }}">
+                    <img class="img-responsive" src="{{ asset('images/forma2.jpg') }}" alt="">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                </a>
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href=" {{ path('proj_contactformation') }}">formation bureatique</a>
+                        </h3>
+                        <p class="project-cat">2 mois </p>
+                        <input type="button" class="project-cat" value="se former" />
+                    </div>
+                </div>
+            </div>
+        </div><!-- Isotope item 2 end -->
+
+        <div class="col-md-4 col-sm-6 col-xs-12 government isotope-item">
+
+
+            <!-- <div class="isotope-img-container">
+                <a href="#">
+                    <img class="img-responsive" src="images/projects/project3.jpg" alt="">
+                    <span class="gallery-icon"><i class="fa fa-plus"></i></span>
+                </a>
+                <div class="project-item-info">
+                    <div class="project-item-info-content">
+                        <h3 class="project-item-title">
+                            <a href="#">TNT East Facility</a>
+                        </h3>
+                        <p class="project-cat">Government</p>
+                    </div>
+                </div>
+            </div>
+        </div> --> <!-- Isotope item 3 end -->
+        </div>
+    </div>
+{% endblock %}

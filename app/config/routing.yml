@@ -1,0 +1,49 @@
+logement:
+    resource: "@LogementBundle/Resources/config/routing.yml"
+    prefix:   /logement
+
+user:
+    resource: "@UserBundle/Controller/"
+    prefix:   /user
+
+management_service:
+    resource: "@ManagementServiceBundle/Resources/config/routing.yml"
+    prefix:   /management_service
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+event:
+    resource: '@EventBundle/Resources/config/routing.yml'
+    prefix:   /event
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+
+
+benevole:
+    resource: "@BenevoleBundle/Resources/config/routing.yml"
+    prefix:   /
+
+association:
+    resource: "@AssociationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+esprit_api:
+    resource: "@EspritApiBundle/Resources/config/routing.yml"
+    prefix:   /apim
+
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+don:
+    resource: "@DonBundle/Resources/config/routing.yml"
+    prefix:   /don
+api:
+    resource: "@ApiBundle/Resources/config/routing.yml"
+    prefix:   /api
+
+projet_proj:
+    resource: "@ProjetProjBundle/Resources/config/routing.yml"
+    prefix:   /

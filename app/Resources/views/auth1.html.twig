@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title> {% block title %} Authentification {% endblock %} </title>
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+</head>
+    {% block style %}
+    <style>
+        /*set border to the form*/
+        body {
+            background-image: url('{{asset('images/back3.jpg')}}');
+            position: relative;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 500%;
+        }
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        /*assign full width inputs*/
+
+        input[type=text],
+        input[type=password] ,
+        input[type=email]
+        {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 2px solid #ccc;
+            box-sizing: border-box;
+            opacity: 1;
+        }
+        /*set a style for the buttons*/
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        /* set a hover effect for the button*/
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 1;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+         form {
+            background-color:white ;
+            margin: auto;
+            width: 300px ;
+            padding: 50px;
+            height: 500px ;
+            opacity: 0.7;
+        }
+
+
+
+    </style>
+{% endblock %}
+<body>
+{% block header %}
+    <div align="center">
+    <img src="{{ asset('images/lito2.png') }}"  align="center" width="300" height="100" alt="">
+    </div>
+{% endblock %}
+{% block body %}
+<p> bonjour auth </p>
+{% endblock %}
+</body>

@@ -1,0 +1,160 @@
+AppBundle\Entity\FosUser:
+    type: entity
+    table: fos_user
+    indexes:
+        IDX_957A6479C32A47EE:
+            columns:
+                - school_id
+        IDX_957A647958ABF955:
+            columns:
+                - logement_id
+    uniqueConstraints:
+        UNIQ_957A647992FC23A8:
+            columns:
+                - username_canonical
+        UNIQ_957A6479A0D96FBF:
+            columns:
+                - email_canonical
+        UNIQ_957A6479C05FB297:
+            columns:
+                - confirmation_token
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 180
+            options:
+                fixed: false
+        usernameCanonical:
+            type: string
+            nullable: false
+            length: 180
+            options:
+                fixed: false
+            column: username_canonical
+        email:
+            type: string
+            nullable: false
+            length: 180
+            options:
+                fixed: false
+        emailCanonical:
+            type: string
+            nullable: false
+            length: 180
+            options:
+                fixed: false
+            column: email_canonical
+        enabled:
+            type: boolean
+            nullable: false
+        salt:
+            type: string
+            nullable: true
+            length: 255
+            options:
+                fixed: false
+                default: 'NULL'
+        password:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        lastLogin:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: last_login
+        confirmationToken:
+            type: string
+            nullable: true
+            length: 180
+            options:
+                fixed: false
+                default: 'NULL'
+            column: confirmation_token
+        passwordRequestedAt:
+            type: datetime
+            nullable: true
+            options:
+                default: 'NULL'
+            column: password_requested_at
+        roles:
+            type: array
+            nullable: false
+            length: null
+            options:
+                fixed: false
+        nom:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        prenom:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        tel:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        dispotime:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: dispoTime
+        statut:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    manyToOne:
+        logement:
+            targetEntity: Logement
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                logement_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        school:
+            targetEntity: School
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                school_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        idEvenement:
+            targetEntity: Event
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: user
+            inversedBy: null
+            joinTable: null
+            orderBy: null
+    lifecycleCallbacks: {  }

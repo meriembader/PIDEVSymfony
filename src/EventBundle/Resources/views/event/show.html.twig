@@ -1,0 +1,33 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block body %}
+    <div>
+    <h1>Event</h1>
+        <div class="card" style="width: 18rem;">
+            <img src="{{ asset('uploads/') ~ event.picture }}" class="card-img-top image-front-school" alt="school">
+            <div class="card-body">
+                <h5 class="card-title">{{ event.title }}</h5>
+                <div class="card-text">
+                    <p>Adresse : {{ event.location }}<p/>
+                    <p>start Date : {{ event.startDate | date("j. F Y", "Europe/Paris") }}<p/>
+                    <p>End Date : {{ event.endDate | date("j. F Y", "Europe/Paris") }}<p/>
+                    <p>description : {{ event.description }}<p/>
+
+                </div>
+                <a href="{{ path('participer_event',{id : event.id}) }}" class="btn btn-primary">Participate</a>
+            </div>
+        </div>
+        <h2>Comments : </h2>
+        {% for comment in event.comments %}
+            <p>{{ comment.user.nom }} a commenté : {{ comment.contenue }}</p>
+        {% endfor %}
+        <h2>Add Comment</h2>
+        <form method="post" action="{{ path('add_comment') }}">
+            <input type="hidden" name="id_event" value="{{ event.id }}">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name ="contenue" placeholder="contenue" >
+                <input type="submit" value="commenter"/>
+            </div>
+        </form>
+    </div>
+{% endblock %}

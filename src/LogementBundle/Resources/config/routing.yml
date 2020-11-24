@@ -1,0 +1,44 @@
+new_logement:
+    path:     /newLogement
+    defaults: { _controller: LogementBundle:Logement:newLogement }
+
+edit_logement:
+    path:     /editLogement/{id}
+    defaults: { _controller: LogementBundle:Logement:editLogement }
+
+delete_logement:
+    path:     /deleteLogement/{id}
+    defaults: { _controller: LogementBundle:Logement:deleteLogement }
+
+list_logement:
+    path:     /listLogement
+    defaults: { _controller: LogementBundle:Logement:listLogement }
+
+_list_logement_admin:
+    path:     /ListLogementAdmin
+    defaults: { _controller: LogementBundle:Logement:ListLogementAdmin }
+
+join_logement:
+    path:     /joinLogement/{id}
+    defaults: { _controller: LogementBundle:Logement:joinLogement }
+search_Logement:
+    path:     /searchLogement
+    defaults: { _controller: LogementBundle:Logement:searchLogement }
+pdf:
+    path:     /pdf
+    defaults: { _controller: LogementBundle:Logement:pdf }
+
+new:
+    path:     /famille/new
+    defaults: { _controller: LogementBundle:Famille:new }
+
+send_email:
+    path:     /sendEmail/{id}
+    defaults: { _controller: LogementBundle:Famille:sendEmail }
+
+list:
+    path:     /famille/list
+    defaults: { _controller: LogementBundle:Famille:list }
+chart_logement:
+    path:     /charts
+    defaults: { _controller: LogementBundle:Logement:charts }

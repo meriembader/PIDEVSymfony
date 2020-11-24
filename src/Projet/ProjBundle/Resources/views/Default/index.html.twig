@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% block menu %}
+<nav class="site-navigation navigation navdown">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="site-nav-inner pull-right">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+
+                <div class="collapse navbar-collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="{{ path('login') }}"> <span class="glyphicon glyphicon-share-alt"></span> Login </a></li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+

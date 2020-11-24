@@ -1,0 +1,47 @@
+management_service_homepage:
+    path:     /
+    defaults: { _controller: ManagementServiceBundle:Default:index }
+doctor_list:
+    path:     /doctor_list
+    defaults: { _controller: ManagementServiceBundle:Doctor:list }
+edit_doctor:
+    path:     /edit/{id}
+    defaults: { _controller: ManagementServiceBundle:Doctor:edit }
+delete_doctor:
+    path:     /delete/{id}
+    defaults: { _controller: ManagementServiceBundle:Doctor:delete }
+pdf_action:
+    path:     /pdf
+    defaults: { _controller: ManagementServiceBundle:Doctor:pdf }
+search_by_statut:
+    path:     /search/{status}
+    defaults: { _controller: ManagementServiceBundle:Doctor:searchByStatut }
+
+
+
+add_school:
+    path:     /addSchool
+    defaults: { _controller: ManagementServiceBundle:School:addSchool }
+
+edit_school:
+    path:     /editSchool/{id}
+    defaults: { _controller: ManagementServiceBundle:School:editSchool }
+
+delete_school:
+    path:     /deleteSchool/{id}
+    defaults: { _controller: ManagementServiceBundle:School:deleteSchool }
+
+show_schools:
+    path:     /showSchools
+    defaults: { _controller: ManagementServiceBundle:School:showSchools }
+
+affect_user_to_school:
+    path:     /affectUserToSchool/{id}
+    defaults: { _controller: ManagementServiceBundle:School:affectUserToSchool }
+
+show_user_front:
+    path:     /userSchoolFront
+    defaults: { _controller: ManagementServiceBundle:School:showSchoolFront }
+show_doctors_front:
+    path:     /userDoctorFront
+    defaults: { _controller: ManagementServiceBundle:Doctor:listFront }

@@ -1,0 +1,7 @@
+benevole_benevole:
+    resource: "@BenevoleBundle/Resources/config/routing/benevole.yml"
+    prefix:   /benevole
+
+benevole_homepage:
+    path:     /home
+    defaults: { _controller: BenevoleBundle:Default:index }

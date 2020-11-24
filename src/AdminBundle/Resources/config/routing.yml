@@ -1,0 +1,7 @@
+admin_homepage:
+    path:     /admin
+    defaults: { _controller: AdminBundle:Default:index }
+
+admin_chart:
+    path:     /chart
+    defaults: {_controller: "AssociationBundle:Association:chart"}

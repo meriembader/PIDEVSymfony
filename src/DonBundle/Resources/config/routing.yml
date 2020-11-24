@@ -1,0 +1,81 @@
+don_homepage:
+    path:     /index
+    defaults: { _controller: DonBundle:Default:index }
+don_addProd:
+    path:     /addProd
+    defaults: { _controller: DonBundle:Don:addProd }
+don_listProds:
+    path:     /listProds
+    defaults : { _controller: DonBundle:Don:listProds}
+don_editProd:
+    path:     /addProd/{idProd}
+    defaults: { _controller: DonBundle:Don:addProd }
+don_deleteProd:
+    path:     /deleteProd/{idProd}
+    defaults: { _controller: DonBundle:Don:deleteProd }
+don_addDonProd:
+    path:     /addDonProd
+    defaults: { _controller: DonBundle:Don:addDonProd }
+don_addDonP:
+    path:     /addDonP
+    defaults: { _controller: DonBundle:Don:addDonP }
+don_addDonPro:
+    path:     /addDonPro/{idDon}
+    defaults: { _controller: DonBundle:Don:addDonPro }
+don_listDonProds:
+    path:     /listDonProds
+    defaults : { _controller: DonBundle:Don:listDonProds}
+don_deleteDonProd:
+    path:     /deleteDonProd/{idDon}
+    defaults: { _controller: DonBundle:Don:deleteDonProd }
+don_editDonProd:
+    path:     /editDonProd/{idDon}
+    defaults: { _controller: DonBundle:Don:editDonProd }
+don_addDonA:
+    path:     /addDonA
+    defaults: { _controller: DonBundle:Don:addDonA }
+don_addDonArgent:
+    path:     /addDonArgent
+    defaults: { _controller: DonBundle:Don:addDonArgent }
+don_deleteDonArgent:
+    path:     /deleteDonArgent/{idDon}
+    defaults: { _controller: DonBundle:Don:deleteDonArgent }
+don_editDonArgent:
+    path:     /editDonArgent/{idDon}
+    defaults: { _controller: DonBundle:Don:editDonArgent }
+don_listDonArgent:
+    path:     /listDonArgent
+    defaults : { _controller: DonBundle:Don:listDonArgent}
+don_top_don_arg:
+    path:     /topdonarg
+    defaults : { _controller: DonBundle:Don:topdonarg}
+don_top_don_prod:
+    path:     /topdonprod
+    defaults : { _controller: DonBundle:Don:topdonprod}
+don_add_don:
+    path:     /addDon
+    defaults : { _controller: DonBundle:Don:points}
+don_listDonArgentf:
+    path:     /listDonArgentf
+    defaults : { _controller: DonBundle:Don:listDonArgentf}
+don_listDonProdsf:
+    path:     /listDonProdsf
+    defaults : { _controller: DonBundle:Don:listDonProdsf}
+don_Stat:
+    path:     /Stat
+    defaults : { _controller: DonBundle:Don:Stat}
+don_pdf:
+    path:     /pdf
+    defaults : { _controller: DonBundle:Don:pdf}
+don_top_don_prod_m:
+    path:     /topdonprodm
+    defaults : { _controller: DonBundle:Don:topdonprodm}
+don_top_don_arg_m:
+    path:     /topdonargm
+    defaults : { _controller: DonBundle:Don:topdonargm}
+don_list_don_prodb:
+    path:    /listDonProdsb
+    defaults: { _controller: DonBundle:Don:listDonProdsb}
+don_list_don_argb:
+    path:    /listDonArgentb
+    defaults: { _controller: DonBundle:Don:listDonArgentb}

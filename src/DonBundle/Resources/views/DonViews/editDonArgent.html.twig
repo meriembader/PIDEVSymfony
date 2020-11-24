@@ -1,0 +1,14 @@
+{% extends 'baseFront.html.twig' %}
+{% block banner %}
+    <h1 class="banner-title">Faire un don d'argent</h1>
+    <ol class="breadcrumb">
+    </ol>
+{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ "Somme en dinars:" }}
+    <p></p>
+    {{ form_widget(form.somme) }}
+    <button type="submit">Valider</button>
+    {{ form_end(form) }}
+{% endblock %}

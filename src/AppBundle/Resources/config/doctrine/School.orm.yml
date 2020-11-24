@@ -1,0 +1,52 @@
+AppBundle\Entity\School:
+    type: entity
+    table: school
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        fullname:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: fullName
+        email:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: Email
+        tel:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        address:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        nbplace:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: nbPlace
+        speciality:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

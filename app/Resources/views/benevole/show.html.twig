@@ -1,0 +1,51 @@
+{% block body %}
+    <h1>benevole</h1>
+
+
+    <table>
+        <tbody>
+        <tr>
+                <th>Id</th>
+                <td>{{ benevole.id }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ benevole.cin }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ benevole.address }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ benevole.mail }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ benevole.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ benevole.niveau }}</td>
+            </tr>
+            <tr>
+                <th>Gouvernorat</th>
+                <td>{{ benevole.gouvernorat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('benevole_new') }}">Retour </a>
+        </li>
+        <li>
+            <a href="{{ path('benevole_edit', { 'id': benevole.id }) }}">Modifier </a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

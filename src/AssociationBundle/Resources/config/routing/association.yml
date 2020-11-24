@@ -1,0 +1,48 @@
+association_index:
+    path:     /
+    defaults: { _controller: "AssociationBundle:Association:index" }
+    methods:  GET
+
+association_show:
+    path:     /{id}/show
+    defaults: { _controller: "AssociationBundle:Association:show" }
+    methods:  GET
+
+association_new:
+    path:     /new
+    defaults: { _controller: "AssociationBundle:Association:new" }
+    methods:  [GET, POST]
+
+association_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AssociationBundle:Association:edit" }
+    methods:  [GET, POST]
+
+association_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AssociationBundle:Association:delete" }
+    methods:  DELETE
+
+association_pdf:
+    path:     /pdf
+    defaults: { _controller: "AssociationBundle:Association:pdf" }
+    methods:  GET
+
+association_excel:
+    path:     /excel
+    defaults: { _controller: "AssociationBundle:Association:excel" }
+    methods:  GET
+
+association_chart:
+    path:     /chart
+    defaults: {_controller: "AssociationBundle:Association:chart"}
+
+
+association_search:
+    path:     /search
+    defaults: {_controller: "AssociationBundle:Association:search"}
+
+
+association_dash:
+    path:     /dashboard
+    defaults: {_controller: "AssociationBundle:Association:dashboard"}

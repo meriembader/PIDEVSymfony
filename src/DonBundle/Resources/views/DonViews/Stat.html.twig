@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+    {%  block body %}
+    <html>
+<head></head>
+<body>
+<div id="div_chart"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    {{ gc_draw(piechart,'div_chart') }}
+</script>
+<p></p>
+<div id="div_chart3"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    {{ gc_draw(line,'div_chart3') }}
+</script>
+<p></p>
+<div id="div_chart2"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    {{ gc_draw(chart,'div_chart2') }}
+</script>
+
+</body>
+</html>
+    {% endblock %}

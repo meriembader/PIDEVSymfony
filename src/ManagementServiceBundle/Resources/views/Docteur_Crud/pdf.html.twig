@@ -1,0 +1,25 @@
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>nom</th>
+        <th>prenom</th>
+        <th>telephone</th>
+        <th>disponibilite</th>
+        <th>status</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in doctors %}
+        <tr>
+            <td>{{ d.nom }}</td>
+            <td>{{ d.prenom }}</td>
+            <td>{{ d.tel }}</td>
+            <td>{{ d.dispoTime }}</td>
+            <td>{{ d.statut }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

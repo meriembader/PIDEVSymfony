@@ -1,0 +1,25 @@
+
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>event name</th>
+        <th>event address</th>
+        <th>start date</th>
+        <th>end date</th>
+        <th>state</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for d in events %}
+        <tr>
+            <td>{{ d.title }}</td>
+            <td>{{ d.location }}</td>
+            <td>{{ d.startDate  | date("j. F Y", "Europe/Paris") }}</td>
+            <td>{{ d.endDate  | date("j. F Y", "Europe/Paris") }}</td>
+            <td>{{ d.state }}</td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

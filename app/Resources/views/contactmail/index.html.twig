@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Contactmails list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contactmail in contactmails %}
+            <tr>
+                <td><a href="{{ path('contactmail_show', { 'id': contactmail.id }) }}">{{ contactmail.id }}</a></td>
+                <td>{{ contactmail.name }}</td>
+                <td>{{ contactmail.email }}</td>
+                <td>{{ contactmail.subject }}</td>
+                <td>{{ contactmail.message }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('contactmail_show', { 'id': contactmail.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contactmail_edit', { 'id': contactmail.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('contactmail_new') }}">Create a new contactmail</a>
+        </li>
+    </ul>
+{% endblock %}

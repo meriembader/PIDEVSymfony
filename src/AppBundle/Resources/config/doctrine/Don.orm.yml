@@ -1,0 +1,49 @@
+AppBundle\Entity\Don:
+    type: entity
+    table: don
+    indexes:
+        id_user:
+            columns:
+                - id_user
+    id:
+        idDon:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_don
+            generator:
+                strategy: IDENTITY
+    fields:
+        dateDon:
+            type: date
+            nullable: true
+            options:
+                default: 'NULL'
+            column: date_don
+        heureDon:
+            type: time
+            nullable: true
+            options:
+                default: 'NULL'
+            column: heure_don
+        etat:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                default: 'NULL'
+        type:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                default: 'NULL'
+        idUser:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_user
+    lifecycleCallbacks: {  }

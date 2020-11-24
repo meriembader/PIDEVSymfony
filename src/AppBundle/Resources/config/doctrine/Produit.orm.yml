@@ -1,0 +1,34 @@
+AppBundle\Entity\Produit:
+    type: entity
+    table: produit
+    uniqueConstraints:
+        libelle_prod:
+            columns:
+                - libelle_prod
+    id:
+        idProd:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: id_prod
+            generator:
+                strategy: IDENTITY
+    fields:
+        categorie:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+                default: 'NULL'
+        libelleProd:
+            type: string
+            nullable: true
+            length: 30
+            options:
+                fixed: false
+                default: 'NULL'
+            column: libelle_prod
+    lifecycleCallbacks: {  }

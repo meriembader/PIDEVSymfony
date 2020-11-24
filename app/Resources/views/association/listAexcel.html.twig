@@ -1,0 +1,38 @@
+s{% block container %}
+    <div class=" container">
+        <h5 Align="centre">Listes des Associations</h5>
+        <table class="table table-data2">
+            <thead>
+            <tr>
+
+                <th>Id</th>
+                <th>Raisonsociale</th>
+                <th>Address</th>
+                <th>Telephone</th>
+                <th>Domaine</th>
+                <th>Gouvernorat</th>
+
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for association in associations %}
+                <tr class="tr-shadow">
+
+                    <td><a href="{{ path('association_show', { 'id': association.id }) }}">{{ association.id }}</a></td>
+                    <td>{{ association.raisonSociale }}</td>
+                    <td>{{ association.address }}</td>
+                    <td class="desc">{{ association.telephone }}</td>
+                    <td>{{ association.domaine }}</td>
+                    <td>{{ association.gouvernorat }}</td>
+
+
+                </tr>
+
+
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
